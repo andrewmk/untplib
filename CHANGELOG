@@ -1,4 +1,4 @@
-version 0.3.2 -
+version 0.3.2 - 2014-02-02
 --------------------------
 - PEP8 cleanup
 - Update descriptions to match RFC 5905. Patch by Yann Ilas.
