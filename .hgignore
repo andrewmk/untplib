@@ -3,3 +3,4 @@ syntax: glob
 *.{rej,orig}
 *.pyc
 PKG-INFO
+dist/
