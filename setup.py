@@ -48,15 +48,15 @@ or just copy ntplib.py inside a directory in your sys.path, e.g.
 
 
 setup(name='ntplib',
-      version='0.3.2',
+      version='0.3.3',
       description='Python NTP library',
       author='Charles-Francois Natali',
       author_email='cf.natali@gmail.com',
       url='http://code.google.com/p/ntplib/',
       py_modules=['ntplib'],
-      license='LGPL',
+      license='MIT',
       classifiers=[
-          'License :: OSI Approved :: GNU Library or Lesser General Public License (LGPL)',
+          'License :: OSI Approved :: MIT License',
           'Programming Language :: Python',
           'Operating System :: OS Independent',
           'Topic :: System :: Networking :: Time Synchronization'

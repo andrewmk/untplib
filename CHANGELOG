@@ -1,3 +1,7 @@
+version 0.3.3 - 2015-07-27
+--------------------------
+- Change to more permissive MIT license
+
 version 0.3.2 - 2014-02-02
 --------------------------
 - PEP8 cleanup
