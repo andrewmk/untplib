@@ -193,7 +193,6 @@ class NTPPacket:
                 _to_frac(self.tx_timestamp))
         except struct.error:
             raise NTPException("Invalid NTP packet fields.")
-
         return packed
 
     def from_data(self, data):
@@ -209,7 +208,6 @@ class NTPPacket:
         try:
             unpacked = struct.unpack(NTPPacket._PACKET_FORMAT,
                     data[0:struct.calcsize(NTPPacket._PACKET_FORMAT)])
-            
         except struct.error:
             raise NTPException("Invalid NTP packet.")
 
@@ -486,4 +484,3 @@ def ref_id_to_text(ref_id, stratum=2):
         return '%d.%d.%d.%d' % fields
     else:
         raise NTPException("Invalid stratum.")
-
