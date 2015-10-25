@@ -398,4 +398,92 @@ def system_to_ntp_time(timestamp):
     Returns:
     corresponding NTP time
     """
-    return timestamp + NTP.NTP_DE
+    return timestamp + NTP.NTP_DELTA
+
+
+def leap_to_text(leap):
+    """Convert a leap indicator to text.
+
+    Parameters:
+    leap -- leap indicator value
+
+    Returns:
+    corresponding message
+
+    Raises:
+    NTPException -- in case of invalid leap indicator
+    """
+    if leap in NTP.LEAP_TABLE:
+        return NTP.LEAP_TABLE[leap]
+    else:
+        raise NTPException("Invalid leap indicator.")
+
+
+def mode_to_text(mode):
+    """Convert a NTP mode value to text.
+
+    Parameters:
+    mode -- NTP mode
+
+    Returns:
+    corresponding message
+
+    Raises:
+    NTPException -- in case of invalid mode
+    """
+    if mode in NTP.MODE_TABLE:
+        return NTP.MODE_TABLE[mode]
+    else:
+        raise NTPException("Invalid mode.")
+
+
+def stratum_to_text(stratum):
+    """Convert a stratum value to text.
+
+    Parameters:
+    stratum -- NTP stratum
+
+    Returns:
+    corresponding message
+
+    Raises:
+    NTPException -- in case of invalid stratum
+    """
+    if stratum in NTP.STRATUM_TABLE:
+        return NTP.STRATUM_TABLE[stratum] % (stratum)
+    elif 1 < stratum < 16:
+        return "secondary reference (%s)" % (stratum)
+    elif stratum == 16:
+        return "unsynchronized (%s)" % (stratum)
+    else:
+        raise NTPException("Invalid stratum or reserved.")
+
+
+def ref_id_to_text(ref_id, stratum=2):
+    """Convert a reference clock identifier to text according to its stratum.
+
+    Parameters:
+    ref_id  -- reference clock indentifier
+    stratum -- NTP stratum
+
+    Returns:
+    corresponding message
+
+    Raises:
+    NTPException -- in case of invalid stratum
+    """
+    fields = (ref_id >> 24 & 0xff, ref_id >> 16 & 0xff,
+              ref_id >> 8 & 0xff, ref_id & 0xff)
+
+    # return the result as a string or dot-formatted IP address
+    if 0 <= stratum <= 1:
+        text = '%c%c%c%c' % fields
+        if text in NTP.REF_ID_TABLE:
+            return NTP.REF_ID_TABLE[text]
+        else:
+            return "Unidentified reference source '%s'" % (text)
+    elif 2 <= stratum < 255:
+        return '%d.%d.%d.%d' % fields
+    else:
+        raise NTPException("Invalid stratum.")
+
