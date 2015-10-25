@@ -1,8 +1,9 @@
 # untplib
 Adapted from code.google.com/p/ntplib
 
-Usage is as follows:
+##Usage is as follows:
 
+```
 import untplib
 
 c=untplib.NTPClient()
@@ -15,3 +16,4 @@ import time
 rtc = RTC()
 print("Adjusting clock by ", resp.offset, "seconds")
 rtc.init(time.localtime(time.time() + resp.offset))
+```
