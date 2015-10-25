@@ -17,3 +17,6 @@ rtc = RTC()
 print("Adjusting clock by ", resp.offset, "seconds")
 rtc.init(time.localtime(time.time() + resp.offset))
 ```
+
+##Limitations
+The WiPy board doesn't support floating point numbers so times are only dealt with in whole seconds.
