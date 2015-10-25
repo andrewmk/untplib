@@ -1,5 +1,5 @@
-# ntplib
-Automatically exported from code.google.com/p/ntplib
+# untplib
+Adapted from code.google.com/p/ntplib
 
 Usage is as follows:
 
