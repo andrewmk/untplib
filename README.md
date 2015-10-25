@@ -1,6 +1,9 @@
 # untplib
 A MicroPython NTP client for the WiPy board. Adapted from [http://code.google.com/p/ntplib](http://code.google.com/p/ntplib)
 
+##Installation
+Download and put `untplib.py` in your `/flash/lib` folder.
+
 ##Usage
 
 ```
