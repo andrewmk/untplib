@@ -1,5 +1,5 @@
 # untplib
-Adapted from code.google.com/p/ntplib
+A MicroPython NTP client for the WiPy board. Adapted from code.google.com/p/ntplib
 
 ##Usage is as follows:
 
