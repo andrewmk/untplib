@@ -1,7 +1,7 @@
 # untplib
 A MicroPython NTP client for the WiPy board. Adapted from code.google.com/p/ntplib
 
-##Usage is as follows:
+##Usage
 
 ```
 import untplib
