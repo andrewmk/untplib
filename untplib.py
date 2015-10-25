@@ -21,6 +21,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 ###############################################################################
+
+#############################################
+# Changed to run in MicroPython on the WiPy
+# by Andrew Hedges
+# 24th Oct 2015
+#############################################
+
 """Python NTP library.
 
 Implementation of client-side NTP (RFC-1305), and useful NTP-related
