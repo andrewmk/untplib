@@ -1,10 +1,10 @@
 # untplib
 A MicroPython NTP client for the WiPy board. Adapted from [http://code.google.com/p/ntplib](http://code.google.com/p/ntplib)
 
-##Installation
+## Installation
 Download and put `untplib.py` in your `/flash/lib` folder.
 
-##Usage
+## Usage
 
 ```
 import untplib
@@ -21,5 +21,5 @@ print("Adjusting clock by ", resp.offset, "seconds")
 rtc.init(time.localtime(time.time() + resp.offset))
 ```
 
-##Limitations
+## Limitations
 The WiPy board doesn't support floating point numbers so times are only dealt with in whole seconds.
